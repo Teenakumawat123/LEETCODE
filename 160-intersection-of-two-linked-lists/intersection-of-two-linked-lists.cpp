@@ -25,7 +25,7 @@ public:
                 tempA=tempA->next;
             }
         }
-        else if(lenB>lenA){
+        else{
             for(int i=0;i<abs(lenA-lenB);i++){
                 tempB=tempB->next;
             }
