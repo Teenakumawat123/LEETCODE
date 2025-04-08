@@ -8,7 +8,6 @@ public:
         int maxr=n-1;
         int maxc=n-1; 
         int count=1;
-        vector<int>v;
         while(minr<=maxr && minc<=maxc){
             for(int j=minc;j<=maxc;j++){
              matrix[minr][j]=count++;
