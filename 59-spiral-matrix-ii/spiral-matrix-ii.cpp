@@ -14,22 +14,18 @@ public:
              matrix[minr][j]=count++;
             } 
             minr++;
-            // if(minr>maxr || minc>maxc) break;
             for(int i=minr;i<=maxr;i++){
                matrix[i][maxc]=count++; 
             }
             maxc--;
-            // if(minr>maxr || minc>maxc) break;
             for(int j=maxc;j>=minc;j--){
                 matrix[maxr][j]=count++; 
             }
             maxr--;
-            // if(minr>maxr || minc>maxc) break;
             for(int i=maxr;i>=minr;i--){
                  matrix[i][minc]=count++; 
             }
             minc++;
-            // if(minr>maxr || minc>maxc) break;
         }
     return matrix;
     }
