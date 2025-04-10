@@ -31,20 +31,20 @@ public:
             if(a->val<=b->val){
              temp->next=a;
              temp=temp->next;
-             if(a->next==NULL){
+             a=a->next;
+             if(a==NULL){
                 temp->next=b;
                 return head;
              }
-             a=a->next;
             }
             else{
                 temp->next=b;
                 temp=temp->next;
-                if(b->next==NULL){
+                  b=b->next;
+                if(b==NULL){
                     temp->next=a;
                     return head;
                 }
-                 b=b->next;
             }
         }
         return head;
