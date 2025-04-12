@@ -16,15 +16,15 @@ public:
         ListNode*tl=lo;
         ListNode*hi=new ListNode(20);
         ListNode*thi=hi;
-        while(temp!=NULL){
-        if(temp->val<x){
-            lo->next=temp;
-            temp=temp->next;
+        while(head!=NULL){
+        if(head->val<x){
+            lo->next=head;
+            head=head->next;
             lo=lo->next;
         }
         else{
-            hi->next=temp;
-            temp=temp->next;
+            hi->next=head;
+            head=head->next;
             hi=hi->next;
         }
         }
