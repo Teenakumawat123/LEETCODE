@@ -21,26 +21,21 @@ public:
        return prev;
     }
     bool isPalindrome(ListNode* head) {
-        //create deep copy
-        ListNode*n=new ListNode(20);//node
-        ListNode*tempN=n;//temp node
-        ListNode*temp=head;
-        while(temp!=NULL){
-           ListNode*node=new ListNode(temp->val);
-           tempN->next=node;
-           tempN=tempN->next;
-           temp=temp->next;
+        ListNode*s=head;
+        ListNode*f=head;
+        while(f->next!=NULL && f->next->next!=NULL){
+            s=s->next;
+            f=f->next->next;
         }
-        n=n->next;
-        n=reverse(n);
-
-        ListNode*a=head;
-        ListNode*b=n;
-        while(a){
+        ListNode*SN=s->next;// slow next node
+        SN=reverse(SN);
+         ListNode*a=SN;
+         ListNode*b=head;
+         while(a){
             if(a->val!=b->val) return false;
             a=a->next;
             b=b->next;
-        }
-        return true;
+         }
+         return true;
     }
 };
