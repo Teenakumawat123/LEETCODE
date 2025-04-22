@@ -16,7 +16,7 @@ public:
            nums.push_back(rev);
     }
 
-        set<int> v;
+        unordered_set<int> v;
         for(int i=0;i<nums.size();i++){
           v.insert(nums[i]);
         }
