@@ -18,11 +18,8 @@ public:
             mp2[t[i]]++;
         }
         for(auto a:mp1){
-            char ch1=a.first;
-            int freq1=a.second;
-            if(mp2.find(ch1)!=mp2.end()){
-                int freq2=mp2[ch1];
-                if(freq1!=freq2) {return false;}
+            if(mp2.find(a.first)!=mp2.end()){
+                if(a.second!=mp2[a.first]) {return false;}
             }
             else { return false;}
         }
