@@ -5,7 +5,6 @@ public:
          vector<string>temp;
         for(int i=0;i<res.size();i++){
             set<string>s;
-            // vector<string>temp;
             for(int j=0;j<res[i].size();j++){
              s.insert(res[i][j]);
             }
