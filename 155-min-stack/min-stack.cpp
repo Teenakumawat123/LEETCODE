@@ -28,11 +28,11 @@ long long mini;
     
     int top() {
         if(st.top()<mini) return mini;
-        return st.top();
+        return (int)(st.top());
     }
     
     int getMin() {
-       return mini;
+       return (int)mini;
     }
 };
 
