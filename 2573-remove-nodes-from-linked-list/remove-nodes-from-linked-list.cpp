@@ -11,7 +11,6 @@
 class Solution {
 public:
     ListNode* removeNodes(ListNode* head) {
-        ListNode*tempN=head;
         vector<int>temp;
         while(head){
             temp.push_back(head->val);
