@@ -7,34 +7,26 @@ stack<int>h;
     }
     
     void push(int x) {
-        st.push(x);
-    }
-    
-    int pop() {
+       if(st.size()==0) {st.push(x); return;}
         while(st.size()>0){
             h.push(st.top());
             st.pop();
         }
-       int x=h.top();
-       h.pop();
+        st.push(x);
         while(h.size()>0){
             st.push(h.top());
             h.pop();
         }
-        return x;
+    }
+    
+    int pop() {
+       int x=st.top();
+       st.pop();
+       return x;
     }
     
     int peek() {
-         while(st.size()>0){
-            h.push(st.top());
-            st.pop();
-        }
-        int x=h.top();
-         while(h.size()>0){
-            st.push(h.top());
-            h.pop();
-        }
-        return x;
+         return st.top();
     }
     
     bool empty() {
