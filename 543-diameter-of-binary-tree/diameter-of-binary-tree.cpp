@@ -5,16 +5,16 @@ public:
         if(root==NULL) return 0;
         return 1+max(levels(root->left),levels(root->right));
     }
-    int helper(TreeNode* root){
-        if(root==NULL) return 0;
+    void helper(TreeNode* root,int &maxD){
+        if(root==NULL) return;
         int D= levels(root->left)+levels(root->right);
         maxD=max(maxD,D);
-        helper(root->left);
-        helper(root->right);
-        return maxD;
+        helper(root->left,maxD);
+        helper(root->right,maxD);
     }
     int diameterOfBinaryTree(TreeNode* root) {
-    maxD=0;
-    return helper(root); 
+        int maxD=0;
+        helper(root,maxD);
+        return maxD; 
     }
 };
