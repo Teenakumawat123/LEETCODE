@@ -11,7 +11,7 @@ class Solution {
 public:
     bool exists(TreeNode*root,TreeNode*t){
         if(root==NULL) return false;
-        if(root==t) return true;
+        if(root->val==t->val) return true;
         return exists(root->left,t) || exists(root->right,t);
     }
     TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
