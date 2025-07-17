@@ -17,30 +17,20 @@ public:
             return 0;
         return 1 + max(levels(root->left), levels(root->right));
     }
-    void nthLevel(TreeNode *root, int curr, int level, vector<int>&v)
-    {
-        if (root == NULL)
-            return;
-        if (curr == level)
-        {
-            v.push_back(root->val);
-        }
-
-        nthLevel(root->left, curr + 1, level, v);
-        nthLevel(root->right, curr + 1, level, v);
+    void traverse_L(TreeNode*root,vector<vector<int>>&ans,int idx){
+        if(root==NULL) return;
+        ans[idx].push_back(root->val);
+        traverse_L(root->left,ans,idx+1);
+        traverse_L(root->right,ans,idx+1);
     }
-    void traverse_L(TreeNode*root,vector<vector<int>>&ans){
+    vector<vector<int>> levelOrder(TreeNode* root) {
         int n=levels(root);
+        vector<vector<int>>ans;
         for(int i=1;i<=n;i++){
             vector<int>v;
-            nthLevel(root,1,i,v);
             ans.push_back(v);
         }
-    }
-
-    vector<vector<int>> levelOrder(TreeNode* root) {
-        vector<vector<int>>ans;
-        traverse_L(root,ans);
+        traverse_L(root,ans,0);
         return ans;
     }
 };
