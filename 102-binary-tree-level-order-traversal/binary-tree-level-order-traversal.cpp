@@ -25,11 +25,7 @@ public:
     }
     vector<vector<int>> levelOrder(TreeNode* root) {
         int n=levels(root);
-        vector<vector<int>>ans;
-        for(int i=1;i<=n;i++){
-            vector<int>v;
-            ans.push_back(v);
-        }
+        vector<vector<int>>ans(n);
         traverse_L(root,ans,0);
         return ans;
     }
