@@ -15,18 +15,16 @@ public:
     if (root == NULL) return 0;
     return 1 + max(levels(root->left), levels(root->right));
     }
-    void nthLevel(TreeNode *root, int curr, int i,vector<int>&ans){
+    void nthLevel(TreeNode *root, int i,vector<int>&ans){
     if (root == NULL) return;
-    if (curr == i) ans[i]=root->val;
-    nthLevel(root->left, curr + 1,i,ans);
-    nthLevel(root->right, curr + 1,i,ans);
+    ans[i]=root->val;
+    nthLevel(root->left,i+1,ans);
+    nthLevel(root->right,i+1,ans);
     }
     vector<int> rightSideView(TreeNode* root) {
         int n=levels(root);
         vector<int>ans(n);
-        for(int i=0;i<n;i++){
-           nthLevel(root,0,i,ans);
-        }
+        nthLevel(root,0,ans);
         return ans;
     }
 };
