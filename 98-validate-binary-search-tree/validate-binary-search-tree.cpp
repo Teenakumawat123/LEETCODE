@@ -11,24 +11,21 @@
  */
 class Solution {
 public:
-    long long maxInleft(TreeNode *root){
-    if (root == NULL)
-        return LLONG_MIN;
-    long long lmax = maxInleft(root->left);
-    long long rmax = maxInleft(root->right);
-    return max((long long)(root->val), max(lmax, rmax));
-    }
-    long long minInright(TreeNode *root){
-    if (root == NULL)
-        return LLONG_MAX;
-    long long lmax = minInright(root->left);
-    long long rmax = minInright(root->right);
-    return min((long long)(root->val), min(lmax, rmax));
+    void solve(TreeNode*root,vector<int>&v){
+        if(root==NULL) return;
+        solve(root->left,v);
+        v.push_back(root->val);
+        solve(root->right,v);
     }
     bool isValidBST(TreeNode* root) {
-        if(root==NULL) return true;
-        else if((long long)(root->val)<=maxInleft(root->left)) return false;
-        else if((long long)(root->val)>=minInright(root->right)) return false;
-        return isValidBST(root->left) && isValidBST(root->right);
+       vector<int>v;
+       solve(root,v);
+        for(int i=0;i<v.size();i++){
+        cout<<v[i]<<" ";
+       }
+       for(int i=1;i<v.size();i++){
+        if(v[i]<=v[i-1]) return false;
+       }
+       return true;
     }
 };
