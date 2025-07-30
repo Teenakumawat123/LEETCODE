@@ -11,23 +11,34 @@
  */
 class Solution {
 public:
-    TreeNode* BST(vector<int>&v,int lo,int hi){
-        if(lo>hi) return NULL;
-        int mid=lo+(hi-lo)/2;
-        TreeNode*root=new TreeNode(v[mid]);
-        root->left=BST(v,lo,mid-1);
-        root->right=BST(v,mid+1,hi);
-        return root;
-    }
-    void solve(TreeNode* root,vector<int>&v, int key){
-        if(root==NULL) return;
-        solve(root->left,v,key);
-        if(root->val!=key) v.push_back(root->val);
-        solve(root->right,v,key);
-    }
     TreeNode* deleteNode(TreeNode* root, int key) {
-        vector<int>v;
-        solve(root,v,key);
-        return BST(v,0,v.size()-1);
+        if(root==NULL) return NULL;
+        if(root->val==key){
+            //case 1:no child node
+            if(root->left==NULL && root->right==NULL) return NULL;
+
+            //case 2: 1 child node
+            if(root->left==NULL || root->right==NULL){
+                if(root->left!=NULL) return root->left;
+                else return root->right;
+            }
+
+            //case 3 :2 child node
+            if(root->left!=NULL && root->right!=NULL){
+                TreeNode*pred=root->left;
+                while(pred->right!=NULL){
+                    pred=pred->right;
+                }
+                root->val=pred->val;
+                root->left=deleteNode(root->left,pred->val);
+            }
+        }
+        else if(key<root->val){
+            root->left=deleteNode(root->left,key);
+        }
+        else{
+            root->right=deleteNode(root->right,key);
+        }
+        return root;
     }
 };
