@@ -2,10 +2,10 @@ class Solution {
 public:
     int lastStoneWeight(vector<int>& stones) {
         priority_queue<int>pq;
-        for(int x:stones){
+        for(int x:stones){ // nlogn
             pq.push(x);
         }
-        while(pq.size()>1){
+        while(pq.size()>1){ //nlogn
             int x=pq.top();
             pq.pop();
             int y=pq.top();
