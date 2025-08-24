@@ -1,7 +1,8 @@
 class Solution {
 public:
+    typedef pair<int,vector<int>>pi;
     vector<vector<int>> kClosest(vector<vector<int>>& arr, int k) {
-        priority_queue<pair<int,vector<int>>>pq;
+        priority_queue<pi>pq;
         for(int i=0;i<arr.size();i++){
             int dis=(arr[i][0]*arr[i][0])+ (arr[i][1]*arr[i][1]);
             pq.push({dis,arr[i]});
