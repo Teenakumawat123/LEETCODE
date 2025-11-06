@@ -18,6 +18,7 @@ public:
        traverse(root->right,ans);
     }
     vector<int> getAllElements(TreeNode* root1, TreeNode* root2) {
+        if(root1==nullptr && root2==nullptr) return {};
         vector<int>ans;
         traverse(root1,ans);
         traverse(root2,ans);
