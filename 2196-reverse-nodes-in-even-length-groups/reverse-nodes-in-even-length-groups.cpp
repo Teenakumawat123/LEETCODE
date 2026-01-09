@@ -33,10 +33,10 @@ ListNode* reverse(ListNode* head) {
             temp=temp->next;
             n++;
         }
-        if(a!=NULL) a->next=NULL;
+        if(a) a->next=NULL;
         c->next=NULL;
         c=reverse(b);
-        if(a!=NULL) a->next=c;
+        if(a) a->next=c;
         b->next=d;
         if(a) return head;
         return c;
