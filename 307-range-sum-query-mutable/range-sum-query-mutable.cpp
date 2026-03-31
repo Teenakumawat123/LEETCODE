@@ -11,10 +11,9 @@ public:
     }
     
    void update(int idx, int val) {
-    int diff = val - arr1[idx];  // calculate change
+    int diff = val - arr1[idx];
     arr1[idx] = val;
 
-    // update prefix sum array from idx onward
     for(int i = idx; i < arr.size(); i++){
         arr[i] += diff;
     }
