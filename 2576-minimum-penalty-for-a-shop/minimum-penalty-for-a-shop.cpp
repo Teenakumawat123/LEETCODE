@@ -21,8 +21,6 @@ public:
             pre[i]=pre[i]+suf[i];
             min_pen=min(min_pen,pre[i]);
         }
-        for(int x:pre) cout<<x;
-        cout<<min_pen;
         for(int i=0;i<pre.size();i++){
             if(pre[i]==min_pen){ return i; break;}
         }
