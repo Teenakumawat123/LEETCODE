@@ -13,7 +13,6 @@ public:
         - Then prefix[l-1] = prefix[r] - k
         - Use hashmap to track previous prefix sums
         */
-        int n=nums.size();
        unordered_map<int,int>mp;
        mp[0]=1;
        int count =0;
