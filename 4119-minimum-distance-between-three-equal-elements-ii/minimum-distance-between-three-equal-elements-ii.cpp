@@ -14,7 +14,6 @@ public:
                 }
             }
         }
-        if(dis==INT_MAX) return -1;
-        else return dis;
+        return dis==INT_MAX?-1:dis;
     }
 };
