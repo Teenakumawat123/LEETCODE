@@ -7,7 +7,6 @@ public:
       for(int i=n-2;i>=0;i--){
          suff[i]=min(nums[i],suff[i+1]);
       }  
-      //for(int x:suff) cout<<x;
       int s=nums[0]-suff[0];
       if(s<=k) return 0;
       for(int i=1;i<n;i++){
