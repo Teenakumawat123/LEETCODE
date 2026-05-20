@@ -8,7 +8,7 @@ public:
             mp[B[i]]++;
             int c=0;
             for(auto x:mp){
-              if(x.second>=2) c++;
+              if(x.second==2) c++;
             }
             C[i]=c;
         }
