@@ -6,5 +6,9 @@ public:
             if(nums[i]==target) return i;
         }
         return -1;
+
+        //using binary search --->O(logn) TC
+
+        
     }
 };
