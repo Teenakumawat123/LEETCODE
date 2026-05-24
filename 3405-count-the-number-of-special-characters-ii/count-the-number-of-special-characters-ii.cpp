@@ -13,7 +13,6 @@ public:
                 }
             }
         }
-        for(auto x:mp) cout<<x.first<<x.second;
         for(auto p:mp){
             if(p.first>='a' && p.first<='z'){
                 if(mp.find(p.first-32)!=mp.end()){
