@@ -17,8 +17,8 @@ public:
     
     int getProduct(int k) {
         if(k>pre.size()) return 0;
-        if(k==pre.size()) return pre[pre.size()-1];
-        return pre[pre.size()-1]/pre[pre.size()-k-1];
+        if(k==pre.size()) return pre.back();
+        return pre.back()/pre[pre.size()-k-1];
     }
 };
 
