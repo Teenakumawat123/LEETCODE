@@ -7,7 +7,6 @@ public:
             int t=pq.top();
             pq.pop();
             if(t==0) break;
-            else if(t<0) {pq.push(abs(t));k--;}
             else {pq.push(-t);k--;}
         }
         int sum=0;
