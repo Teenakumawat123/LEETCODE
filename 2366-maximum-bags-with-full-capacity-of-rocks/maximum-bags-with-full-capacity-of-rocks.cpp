@@ -10,7 +10,7 @@ public:
                 v.push_back((c[i]-r[i]));
             }
         }
-        // if(v.size()==0) return bag;
+        if(v.size()==0) return bag;
         sort(v.begin(),v.end());
         for(int i=0;i<v.size();i++){
             if(v[i]<=aR) {bag++;aR-=v[i];}
