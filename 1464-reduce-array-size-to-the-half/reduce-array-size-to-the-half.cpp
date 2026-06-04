@@ -10,10 +10,6 @@ public:
         for(auto p:mp){
             pq.push({p.second,p.first});
         }
-        // while(pq.size()!=0){
-        //     cout<<pq.top().first;
-        //     pq.pop();
-        // }
         int n=arr.size();
         int size=0;
         int ans=0;
