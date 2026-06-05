@@ -28,10 +28,8 @@ public:
             }
         }
 
-        double ans;
-        if(v.size()%2!=0) ans=(double)v[v.size()/2];
-        else ans=(double)(v[v.size()/2]+v[v.size()/2-1])/2;
+        if(v.size()%2!=0) return (double)v[v.size()/2];
+        else return (double)(v[v.size()/2]+v[v.size()/2-1])/2;
 
-        return ans;
     }
 };
