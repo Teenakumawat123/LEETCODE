@@ -17,11 +17,13 @@ public:
         for(int x:ans)
         {
             if(x==0) res++;
-            else {v[x]++;
+            else {
+                v[x]++;
             if(v[x]==x+1) {
                 res+=v[x];
                 v[x]=0;
-            }}
+             }
+            }
         }
         for(int i=0;i<v.size();i++){
             if(v[i]>0){
