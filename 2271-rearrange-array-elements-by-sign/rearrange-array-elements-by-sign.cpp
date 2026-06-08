@@ -12,10 +12,14 @@ public:
             if(x>0) pos.push_back(x);
             else neg.push_back(x);
         }
+        int idx=0;
        for(int i=0;i<pos.size();i++){
-        ans.push_back(pos[i]);
-        ans.push_back(neg[i]);
+        // ans.push_back(pos[i]);
+        // ans.push_back(neg[i]);
+        nums[idx]=pos[i];
+        nums[idx+1]=neg[i];
+        idx+=2;
        }
-       return ans;
+       return nums;
     }
 };
