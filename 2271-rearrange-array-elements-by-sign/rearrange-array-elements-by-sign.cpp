@@ -1,10 +1,10 @@
 class Solution {
 public:
     vector<int> rearrangeArray(vector<int>& nums) {
-        if(nums.size()==2){
-            if(nums[0]>0) return nums;
-            else { swap(nums[0],nums[1]); return nums;}
-        }
+        // if(nums.size()==2){
+        //     if(nums[0]>0) return nums;
+        //     else { swap(nums[0],nums[1]); return nums;}
+        // }
         vector<int>pos;
         vector<int>neg;
         vector<int>ans;
