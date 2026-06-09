@@ -7,7 +7,7 @@ public:
             maxi=max(maxi,x);
             mini=min(mini,x);
         }
-        long long total_val=((long long)(maxi-mini)*k);
-        return total_val;
+        
+        return ((long long)(maxi-mini)*k);
     }
 };
