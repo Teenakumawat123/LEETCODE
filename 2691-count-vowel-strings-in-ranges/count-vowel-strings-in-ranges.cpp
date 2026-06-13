@@ -10,12 +10,10 @@ public:
             string s=words[i];
             if(vowels(s[0]) && vowels(s.back())) v[i]=1;
         }
-        for(int x:v) cout<<x<<" ";
         for(int i=1;i<v.size();i++){
             v[i]+=v[i-1];
         }
-        cout<<endl;
-        for(int x:v) cout<<x<<" ";
+       
         vector<int>ans;
         
         for(int i=0;i<q.size();i++){
