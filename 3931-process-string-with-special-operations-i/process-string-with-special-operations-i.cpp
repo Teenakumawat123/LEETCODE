@@ -9,7 +9,13 @@ public:
                 res+=res;
             }
             else{
-                reverse(res.begin(),res.end());
+                int i=0;
+                int j=res.size()-1;
+                while(i<j){
+                    swap(res[i],res[j]);
+                    i++;
+                    j--;
+                }
             }
         }
         return res;
