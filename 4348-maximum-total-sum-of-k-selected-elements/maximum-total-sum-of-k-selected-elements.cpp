@@ -6,7 +6,7 @@ public:
         long long sum=0;
         for(int i=n-1;i>=n-k;i--){
             if(mul!=0){
-                long long ans=1LL *(nums[i]*1LL*mul);
+                long long ans=(nums[i]*1LL*mul);
                 sum+=ans;
                 mul--;
             }
