@@ -18,8 +18,6 @@ public:
                 ans=i;
             }
         }
-        diff=v[n-1]/n;
-        if(diff<min_avg) ans=n-1;
-        return ans;
+        return (v[n-1]/n)<min_avg?n-1:ans;
     }
 };
