@@ -15,7 +15,6 @@ public:
            }
              j++;
         }
-        cout<<i;
         return cnt;
     }
 };
