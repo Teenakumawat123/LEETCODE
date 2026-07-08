@@ -48,7 +48,7 @@ public:
 
             long long x=(dig[r]-(before*power[k]%MOD)+MOD)%MOD;
 
-            cout<<x<<" ";
+            // cout<<x*sum<<" ";
 
             ans[i]=(int)((x*sum)%MOD);
         }
