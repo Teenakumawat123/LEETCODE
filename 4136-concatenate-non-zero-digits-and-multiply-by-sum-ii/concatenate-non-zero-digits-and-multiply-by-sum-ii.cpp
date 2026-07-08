@@ -32,15 +32,15 @@ public:
             dig[i]=dig[i-1];
            }
         }
-        for(long long x:dig) cout<<x<<" ";
-        cout<<endl;
+        // for(long long x:dig) cout<<x<<" ";
+        // cout<<endl;
        vector<int>ans(q.size());
         for(int i=0;i<q.size();i++){
             int l=q[i][0];
             int r=q[i][1];
 
             long long sum=pre[r]-((l==0)?0:pre[l-1]);
-            cout<<sum<<" ";
+            // cout<<sum<<" ";
 
             int before=(l==0)?0:dig[l-1];//ye humne esliye nikal hai jisse hamari calculation complex na ho
 
