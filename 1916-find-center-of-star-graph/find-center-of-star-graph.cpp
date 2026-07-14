@@ -9,7 +9,6 @@ public:
         int ans=INT_MIN;
         int res=INT_MIN;
         for(auto x:mp){
-            cout<<x.first<<" "<<x.second<<" ";
            if(ans<x.second) {
             res=x.first;
             ans=x.second;
