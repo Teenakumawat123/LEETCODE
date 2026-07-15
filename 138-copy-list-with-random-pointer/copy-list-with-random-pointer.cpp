@@ -48,8 +48,7 @@ public:
        Node*o=x.first;
        Node*d=x.second;
        if(o->random!=NULL){
-         Node*dr=mp[o->random];
-         d->random=dr;
+         d->random=mp[o->random];
        }
        }
        return c;
