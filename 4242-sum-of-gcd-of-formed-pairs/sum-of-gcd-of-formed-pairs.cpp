@@ -10,7 +10,7 @@ public:
             if(i>0) maxi=max(maxi,nums[i]);
             nums[i]=gcd(min(nums[i],maxi),max(nums[i],maxi));
         }
-        sort(nums.begin(),nums.end());
+        ranges::sort(nums);
         int i=0;
         int j=nums.size()-1;
         long long sum=0;
