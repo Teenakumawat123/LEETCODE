@@ -14,11 +14,11 @@ public:
 
 char ch;
 
-for (auto it = mp.begin(); it != mp.end(); ++it) {
-    if (it->second == 1) {
-        ch = it->first;   // character store किया
-        mp.erase(it);     // map से remove किया
-        break;            // सिर्फ पहला मिला हुआ character चाहिए
+for(auto x:mp){
+    if(x.second==1){
+        ch=x.first;
+        mp.erase(x.first);
+        break;
     }
 }
        for(auto x:mp){
