@@ -28,7 +28,7 @@ public:
         for(auto x:mp){
             vector<int>ans;
             for(auto p:x.second){
-                sort(p.second.begin(),p.second.end());
+                if(p.second.size()!=1) sort(p.second.begin(),p.second.end());
                 for(int z:p.second){
                     ans.push_back(z);
                 }
