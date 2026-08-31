@@ -17,7 +17,7 @@ public:
             v.push_back(head->val);
             head=head->next;
         }
-        if(v.size()==0) return {-1,-1};
+        //if(v.size()==0) return {-1,-1};
         vector<int>ans;
         for(int i=1;i<v.size()-1;i++){
             if(v[i]>v[i-1] && v[i]>v[i+1]) ans.push_back(i+1);
