@@ -11,47 +11,28 @@
 class Solution {
 public:
     vector<int> nodesBetweenCriticalPoints(ListNode* head) {
-        vector<int>ans(2,-1);
-        int idx=1;
-        int fidx=-1;
-        int sidx=-1;
-        ListNode*a=head;
-        ListNode*b=head->next;
-        ListNode*c=head->next->next;
-        if(c==NULL) return {-1,-1};
-        //maximum distance
-        while(c){
-            if((b->val>a->val && b->val>c->val) || (b->val<a->val && b->val<c->val)){
-                if(fidx==-1) fidx=idx;
-                else sidx=idx;
-            }
-            a=a->next;
-            b=b->next;
-            c=c->next;
-            idx++;
+        if(head->next->next==NULL) return {-1,-1};
+        vector<int>v;
+        while(head){
+            v.push_back(head->val);
+            head=head->next;
         }
-        if(sidx==-1) return {-1,-1};
-       int maxd=sidx-fidx;
-        //for minimum distance
-        int mind=INT_MAX;
-        idx=1;
-        fidx=-1;
-        sidx=-1;
-        a=head;
-        b=head->next;
-        c=head->next->next;
-        while(c){
-             if((b->val>a->val && b->val>c->val) || (b->val<a->val && b->val<c->val)){
-                fidx=sidx;
-                sidx=idx;
-             if(fidx!=-1) {int d=sidx-fidx;
-             mind=min(mind,d);}
-            }
-            a=a->next;
-            b=b->next;
-            c=c->next;
-            idx++;
+        if(v.size()==0) return {-1,-1};
+        vector<int>ans;
+        for(int i=1;i<v.size()-1;i++){
+            if(v[i]>v[i-1] && v[i]>v[i+1]) ans.push_back(i+1);
+            if(v[i]<v[i-1] && v[i]<v[i+1]) ans.push_back(i+1);
         }
-        return {mind,maxd};
+        if(ans.size()==0 || ans.size()==1) return {-1,-1};
+        int mi=INT_MAX;
+        int ma=INT_MIN;
+        for(int i=0;i<ans.size()-1;i++){
+            mi=min(mi,abs(ans[i]-ans[i+1]));
+            ma=max(ma,abs(ans[i]-ans[i+1]));
+        }
+        mi=min(mi,abs(ans[0]-ans[ans.size()-1]));
+        ma=max(ma,abs(ans[0]-ans[ans.size()-1]));
+
+        return {mi,ma};
     }
 };
