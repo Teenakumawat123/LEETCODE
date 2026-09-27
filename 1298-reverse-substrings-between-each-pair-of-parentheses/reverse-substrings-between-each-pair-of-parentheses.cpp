@@ -2,7 +2,7 @@ class Solution {
 public:
     string reverseParentheses(string s) {
          int n=s.size();
-         int i=0;
+         //int i=0;
          stack<char>st;
          for(char c:s){
             if(st.size()==0) st.push(c);
