@@ -12,7 +12,11 @@ public:
 
 
 //using recursion
-    if(n==1) return 1;
-    return 4*(n-1)+coloredCells(n-1);
+    // if(n==1) return 1;
+    // return 4*(n-1)+coloredCells(n-1);
+
+    //math and my own observation
+
+    return (long long)(((long long)n*(long long)n)+((long long)(n-1)*(long long)(n-1)));
     }
 };
