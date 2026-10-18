@@ -38,8 +38,8 @@ public:
             }
 
             // Check whether we left the grid.
-            if (r < 0 || r >= m ||
-                c < 0 || c >= n) {
+            if (r < 0 || r > m-1 ||
+                c < 0 || c >n-1) {
                 return {pr, pc};
             }
         }
